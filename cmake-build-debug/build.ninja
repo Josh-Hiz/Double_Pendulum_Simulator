@@ -1,0 +1,856 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: Double_Pendulum_Sim
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target Double_Pendulum_Sim
+
+
+#############################################
+# Order-only phony target for Double_Pendulum_Sim
+
+build cmake_object_order_depends_target_Double_Pendulum_Sim: phony || cmake_object_order_depends_target_glfw cmake_object_order_depends_target_raylib
+
+build CMakeFiles/Double_Pendulum_Sim.dir/main.cpp.o: CXX_COMPILER__Double_Pendulum_Sim_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/main.cpp || cmake_object_order_depends_target_Double_Pendulum_Sim
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles/Double_Pendulum_Sim.dir/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++20
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Double_Pendulum_Sim.dir
+  OBJECT_FILE_DIR = CMakeFiles/Double_Pendulum_Sim.dir
+
+build CMakeFiles/Double_Pendulum_Sim.dir/pendulum_math/pendulum.cpp.o: CXX_COMPILER__Double_Pendulum_Sim_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/pendulum_math/pendulum.cpp || cmake_object_order_depends_target_Double_Pendulum_Sim
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles/Double_Pendulum_Sim.dir/pendulum_math/pendulum.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++20
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Double_Pendulum_Sim.dir
+  OBJECT_FILE_DIR = CMakeFiles/Double_Pendulum_Sim.dir/pendulum_math
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Double_Pendulum_Sim
+
+
+#############################################
+# Link the executable Double_Pendulum_Sim
+
+build Double_Pendulum_Sim: CXX_EXECUTABLE_LINKER__Double_Pendulum_Sim_Debug CMakeFiles/Double_Pendulum_Sim.dir/main.cpp.o CMakeFiles/Double_Pendulum_Sim.dir/pendulum_math/pendulum.cpp.o | _deps/raylib-build/raylib/libraylib.a /opt/homebrew/lib/libboost_system-mt.dylib /opt/homebrew/lib/libboost_filesystem-mt.dylib _deps/raylib-build/raylib/external/glfw/src/libglfw3.a /opt/homebrew/lib/libboost_atomic-mt.dylib || _deps/raylib-build/raylib/external/glfw/src/libglfw3.a _deps/raylib-build/raylib/libraylib.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -framework IOKit  -framework Cocoa  -framework OpenGL  /opt/homebrew/lib/libboost_system-mt.dylib  /opt/homebrew/lib/libboost_filesystem-mt.dylib  -framework  OpenGL  _deps/raylib-build/raylib/external/glfw/src/libglfw3.a  -framework IOKit  -framework Cocoa  -framework CoreFoundation  /opt/homebrew/lib/libboost_atomic-mt.dylib
+  OBJECT_DIR = CMakeFiles/Double_Pendulum_Sim.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Double_Pendulum_Sim
+  TARGET_PDB = Double_Pendulum_Sim.dbg
+
+
+#############################################
+# Utility command for package
+
+build CMakeFiles/package.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build package: phony CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackSourceConfig.cmake /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build package_source: phony CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/jhiz2704/C++Projects/Double-Pendulum-Sim -B/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/package: phony _deps/raylib-build/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackSourceConfig.cmake /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/package_source: phony _deps/raylib-build/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/edit_cache: phony _deps/raylib-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/jhiz2704/C++Projects/Double-Pendulum-Sim -B/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/rebuild_cache: phony _deps/raylib-build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/install: phony _deps/raylib-build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/install/local: phony _deps/raylib-build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/install/strip: phony _deps/raylib-build/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target raylib
+
+
+#############################################
+# Order-only phony target for raylib
+
+build cmake_object_order_depends_target_raylib: phony || cmake_object_order_depends_target_glfw
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o: C_COMPILER__raylib_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/rcore.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.o: C_COMPILER__raylib_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/rmodels.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.o: C_COMPILER__raylib_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/rshapes.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.o: C_COMPILER__raylib_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/rtext.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.o: C_COMPILER__raylib_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/rtextures.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.o: C_COMPILER__raylib_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/utils.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+build _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o: C_COMPILER__raylib_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/raudio.c || cmake_object_order_depends_target_raylib
+  DEFINES = -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target raylib
+
+
+#############################################
+# Link the static library _deps/raylib-build/raylib/libraylib.a
+
+build _deps/raylib-build/raylib/libraylib.a: C_STATIC_LIBRARY_LINKER__raylib_Debug _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rmodels.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rshapes.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/utils.c.o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o || _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g
+  OBJECT_DIR = _deps/raylib-build/raylib/CMakeFiles/raylib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = _deps/raylib-build/raylib/libraylib.a
+  TARGET_PDB = raylib.a.dbg
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/raylib/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/package: phony _deps/raylib-build/raylib/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/raylib/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackSourceConfig.cmake /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/package_source: phony _deps/raylib-build/raylib/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/raylib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/raylib/edit_cache: phony _deps/raylib-build/raylib/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/raylib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/jhiz2704/C++Projects/Double-Pendulum-Sim -B/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/rebuild_cache: phony _deps/raylib-build/raylib/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/raylib/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/raylib/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/install: phony _deps/raylib-build/raylib/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/raylib/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/install/local: phony _deps/raylib-build/raylib/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/raylib/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/raylib/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/install/strip: phony _deps/raylib-build/raylib/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/cmake/GlfwImport.cmake
+# =============================================================================
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/package: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackSourceConfig.cmake /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/package_source: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/edit_cache: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/jhiz2704/C++Projects/Double-Pendulum-Sim -B/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/rebuild_cache: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/raylib/external/glfw/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/install: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/install/local: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/install/strip: phony _deps/raylib-build/raylib/external/glfw/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Order-only phony target for glfw
+
+build cmake_object_order_depends_target_glfw: phony || _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/input.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_init.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_window.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/cocoa_time.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/posix_thread.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/nsgl_context.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
+  FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIC -Wall -std=c99
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Link the static library _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+
+build _deps/raylib-build/raylib/external/glfw/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/window.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g
+  OBJECT_DIR = _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+  TARGET_PDB = glfw3.a.dbg
+
+
+#############################################
+# Utility command for package
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackConfig.cmake
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/package: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package.util
+
+
+#############################################
+# Utility command for package_source
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package_source.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack --config ./CPackSourceConfig.cmake /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/CPackSourceConfig.cmake
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/package_source: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/edit_cache: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/jhiz2704/C++Projects/Double-Pendulum-Sim -B/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/rebuild_cache: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build _deps/raylib-build/raylib/external/glfw/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/install: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/local.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/install/local: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND _deps/raylib-build/raylib/external/glfw/src/all
+  COMMAND = cd /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build _deps/raylib-build/raylib/external/glfw/src/install/strip: phony _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Target aliases.
+
+build glfw: phony _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+
+build libglfw3.a: phony _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+
+build libraylib.a: phony _deps/raylib-build/raylib/libraylib.a
+
+build raylib: phony _deps/raylib-build/raylib/libraylib.a
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
+
+build all: phony Double_Pendulum_Sim _deps/raylib-build/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build
+
+build _deps/raylib-build/all: phony _deps/raylib-build/raylib/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib
+
+build _deps/raylib-build/raylib/all: phony _deps/raylib-build/raylib/libraylib.a _deps/raylib-build/raylib/external/glfw/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw
+
+build _deps/raylib-build/raylib/external/glfw/all: phony _deps/raylib-build/raylib/external/glfw/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-build/raylib/external/glfw/src
+
+build _deps/raylib-build/raylib/external/glfw/src/all: phony _deps/raylib-build/raylib/external/glfw/src/libglfw3.a
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CPack.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CPackComponent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Templates/CPackConfig.cmake.in /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfigVersion.cmake /opt/homebrew/lib/cmake/BoostDetectToolset-1.79.0.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/boost_atomic-config-version.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/boost_atomic-config.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/libboost_atomic-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/libboost_atomic-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/boost_filesystem-config-version.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/boost_filesystem-config.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-shared.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-static.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config-version.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/boost_system-config-version.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/boost_system-config.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/BuildOptions.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/src/glfw_config.h.in
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CPack.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CPackComponent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent/CMakeLists.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Templates/CPackConfig.cmake.in /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfigVersion.cmake /opt/homebrew/lib/cmake/BoostDetectToolset-1.79.0.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/boost_atomic-config-version.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/boost_atomic-config.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/libboost_atomic-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_atomic-1.79.0/libboost_atomic-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/boost_filesystem-config-version.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/boost_filesystem-config.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-shared.cmake /opt/homebrew/lib/cmake/boost_filesystem-1.79.0/libboost_filesystem-variant-static.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config-version.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/boost_system-config-version.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/boost_system-config.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-mt-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-mt-static.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-shared.cmake /opt/homebrew/lib/cmake/boost_system-1.79.0/libboost_system-variant-static.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/raylib-src/CMakeLists.txt _deps/raylib-src/CMakeOptions.txt _deps/raylib-src/cmake/AddIfFlagCompiles.cmake _deps/raylib-src/cmake/BuildOptions.cmake _deps/raylib-src/cmake/CompileDefinitions.cmake _deps/raylib-src/cmake/CompilerFlags.cmake _deps/raylib-src/cmake/EnumOption.cmake _deps/raylib-src/cmake/GlfwImport.cmake _deps/raylib-src/cmake/InstallConfigurations.cmake _deps/raylib-src/cmake/JoinPaths.cmake _deps/raylib-src/cmake/LibraryConfigurations.cmake _deps/raylib-src/cmake/LibraryPathToLinkerFlags.cmake _deps/raylib-src/cmake/PackConfigurations.cmake _deps/raylib-src/cmake/PopulateConfigVariablesLocally.cmake _deps/raylib-src/cmake/raylib-config-version.cmake _deps/raylib-src/raylib.pc.in _deps/raylib-src/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/CMake/glfw3.pc.in _deps/raylib-src/src/external/glfw/CMake/glfw3Config.cmake.in _deps/raylib-src/src/external/glfw/CMakeLists.txt _deps/raylib-src/src/external/glfw/src/CMakeLists.txt _deps/raylib-src/src/external/glfw/src/glfw_config.h.in: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

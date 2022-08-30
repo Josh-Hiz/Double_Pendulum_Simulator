@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/CMakeFiles/raylib-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-build.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-download.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-install.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-test.rule"
+		},
+		{
+			"file" : "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild/raylib-populate-prefix/src/raylib-populate-stamp/raylib-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"raylib-populate"
+		],
+		"name" : "raylib-populate"
+	}
+}

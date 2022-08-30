@@ -1,0 +1,30 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/jhiz2704/C++Projects/Double-Pendulum-Sim -B /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
+-- Populating raylib
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-subbuild
+ninja: no work to do.
+-- Testing if -Werror=pointer-arith can be used -- compiles
+-- Testing if -Werror=implicit-function-declaration can be used -- compiles
+-- Testing if -fno-strict-aliasing can be used -- compiles
+-- Using raylib's GLFW
+-- Using Cocoa for window creation
+-- Audio Backend: miniaudio
+CMake Warning (dev) at cmake-build-debug/_deps/raylib-src/cmake/LibraryConfigurations.cmake:13 (MESSAGE):
+  OpenGL is deprecated starting with macOS 10.14 (Mojave)!
+Call Stack (most recent call first):
+  cmake-build-debug/_deps/raylib-src/src/CMakeLists.txt:55 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Building raylib static library
+-- Generated build type: Debug
+-- Compiling with the flags:
+--   PLATFORM=PLATFORM_DESKTOP
+--   GRAPHICS=GRAPHICS_API_OPENGL_33
+-- generating boost libraries
+-- Boost_INCLUDE_DIRS: /opt/homebrew/include
+-- Boost_LIBRARIES: Boost::system;Boost::filesystem
+-- Boost_VERSION: 1.79.0
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug
