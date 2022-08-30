@@ -1,6 +1,6 @@
 # Double Pendulum Simulator
 ## Written in: 
-C++ using Raylib 
+C++, C, and used Raylib 
 ## Why Raylib?
 Raylib is a simplistic, but very powerful graphics framework generally used to make games, but it does not always need to be games, however. 
 ## Quick Notes:
