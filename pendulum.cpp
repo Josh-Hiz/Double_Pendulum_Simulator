@@ -36,7 +36,7 @@ float pendulum::getAngle() const {
 }
 
 pendulum::~pendulum() {
-    std::cout << "Pendulum destroyed" << std::endl;
+    std::cout << "\nPendulum destroyed" << std::endl;
 }
 
 void pendulum::setAngle(float angle) {
