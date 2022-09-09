@@ -7,6 +7,7 @@
 #include <iostream>
 #include <raylib.h>
 
+
 void pendulum::setX(float length, float angle) {
     x = length * sin(angle);
 }
@@ -31,6 +32,14 @@ void pendulum::setMass(float mass) {
     pMass = mass;
 }
 
+void pendulum::setAngularA(float angA) {
+    angularA = angA;
+}
+
+void pendulum::setAngularV(float angV) {
+    angularV = angV;
+}
+
 float pendulum::getAngle() const {
     return pAngle;
 }
@@ -41,6 +50,10 @@ pendulum::~pendulum() {
 
 void pendulum::setAngle(float angle) {
     pAngle = angle * DEG2RAD;
+}
+
+float pendulum::getMass() const {
+    return pMass;
 }
 
 //Default constructor

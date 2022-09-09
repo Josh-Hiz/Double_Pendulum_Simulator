@@ -40,7 +40,7 @@ if(Boost_FOUND)
 
 endif()
 
-add_executable(Double_Pendulum_Sim main.cpp pendulum.cpp includes/pendulum.h)
+add_executable(Double_Pendulum_Sim main.cpp pendulum.cpp includes/pendulum.h includes/GenerateFile.h FileGenerator/GenerateFile.cpp)
 
 # Link raylib
 target_link_libraries(${PROJECT_NAME} raylib)

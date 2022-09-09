@@ -62,6 +62,14 @@ build CMakeFiles/Double_Pendulum_Sim.dir/pendulum.cpp.o: CXX_COMPILER__Double_Pe
   OBJECT_DIR = CMakeFiles/Double_Pendulum_Sim.dir
   OBJECT_FILE_DIR = CMakeFiles/Double_Pendulum_Sim.dir
 
+build CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator/GenerateFile.cpp.o: CXX_COMPILER__Double_Pendulum_Sim_Debug /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/FileGenerator/GenerateFile.cpp || cmake_object_order_depends_target_Double_Pendulum_Sim
+  DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator/GenerateFile.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++20
+  INCLUDES = -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Double_Pendulum_Sim.dir
+  OBJECT_FILE_DIR = CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Double_Pendulum_Sim
@@ -70,7 +78,7 @@ build CMakeFiles/Double_Pendulum_Sim.dir/pendulum.cpp.o: CXX_COMPILER__Double_Pe
 #############################################
 # Link the executable Double_Pendulum_Sim
 
-build Double_Pendulum_Sim: CXX_EXECUTABLE_LINKER__Double_Pendulum_Sim_Debug CMakeFiles/Double_Pendulum_Sim.dir/main.cpp.o CMakeFiles/Double_Pendulum_Sim.dir/pendulum.cpp.o | _deps/raylib-build/raylib/libraylib.a /opt/homebrew/lib/libboost_system-mt.dylib /opt/homebrew/lib/libboost_filesystem-mt.dylib _deps/raylib-build/raylib/external/glfw/src/libglfw3.a /opt/homebrew/lib/libboost_atomic-mt.dylib || _deps/raylib-build/raylib/external/glfw/src/libglfw3.a _deps/raylib-build/raylib/libraylib.a
+build Double_Pendulum_Sim: CXX_EXECUTABLE_LINKER__Double_Pendulum_Sim_Debug CMakeFiles/Double_Pendulum_Sim.dir/main.cpp.o CMakeFiles/Double_Pendulum_Sim.dir/pendulum.cpp.o CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator/GenerateFile.cpp.o | _deps/raylib-build/raylib/libraylib.a /opt/homebrew/lib/libboost_system-mt.dylib /opt/homebrew/lib/libboost_filesystem-mt.dylib _deps/raylib-build/raylib/external/glfw/src/libglfw3.a /opt/homebrew/lib/libboost_atomic-mt.dylib || _deps/raylib-build/raylib/external/glfw/src/libglfw3.a _deps/raylib-build/raylib/libraylib.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -framework IOKit  -framework Cocoa  -framework OpenGL  /opt/homebrew/lib/libboost_system-mt.dylib  /opt/homebrew/lib/libboost_filesystem-mt.dylib  -framework  OpenGL  _deps/raylib-build/raylib/external/glfw/src/libglfw3.a  -framework IOKit  -framework Cocoa  -framework CoreFoundation  /opt/homebrew/lib/libboost_atomic-mt.dylib
   OBJECT_DIR = CMakeFiles/Double_Pendulum_Sim.dir

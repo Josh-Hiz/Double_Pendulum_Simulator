@@ -11,6 +11,11 @@
 },
 {
   "directory": "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -isystem /opt/homebrew/include -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++20 -o CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator/GenerateFile.cpp.o -c /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/FileGenerator/GenerateFile.cpp",
+  "file": "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/FileGenerator/GenerateFile.cpp"
+},
+{
+  "directory": "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug",
   "command": "/Library/Developer/CommandLineTools/usr/bin/cc -DGL_SILENCE_DEPRECATION -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src -isystem /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu99 -o _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o -c /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/rcore.c",
   "file": "/Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug/_deps/raylib-src/src/rcore.c"
 },
