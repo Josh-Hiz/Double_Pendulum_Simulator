@@ -96,7 +96,7 @@ int main() {
     } else {
         std::cout << "File opened successfully" << std::endl;
     }
-    generator.file << "Angle 1    | X_1         | Y_1         | Angle 2    | X_2         | Y_2     | Frame # " << std::endl;
+    generator.file << "Angle 1    | X_1         | Y_1         | Angle 2    | X_2         | Y_2         | Frame # " << std::endl;
 
 
 

@@ -8,7 +8,7 @@
 #include <boost/math/special_functions/round.hpp>
 
 constexpr int maxstring{1024};
-constexpr int maxLines{100000};
+constexpr int maxLines{5000};
 const char * fileName = "Values.txt";
 
 namespace bs = boost::math;
@@ -21,6 +21,8 @@ void GenerateFile::getData(const std::string & frameCount, const std::string & a
         //Very crude but it works!
         file << angle1 << "  | " << x1 << "  | " << y1 << "  | " << angle2 << "  | " << x2 << "  | " << y2 << "  | " << frameCount << std::endl;
 
+    } else {
+        file.close();
     }
 
 
