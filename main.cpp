@@ -188,6 +188,8 @@ int main() {
 
     generator.file.close();
 
+    std::cout << "Please view Values.txt to view your own data!";
+
     return 0;
 }
 
