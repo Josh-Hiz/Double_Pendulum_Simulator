@@ -24,15 +24,6 @@ public:
     //Pendulum's angular displacement relative to its origin
     float pAngle{};
 
-    /**
-    * Angular Velocity
-    * Angular Acceleration
-    * The most important variables
-    */
-
-    float angularV{};
-    float angularA{};
-
 public:
 
     void setAngularV(float angV);
@@ -43,6 +34,7 @@ public:
 
     [[nodiscard]] float getAngle() const ;
     [[nodiscard]] float getMass() const;
+    [[nodiscard]] float getLength() const;
 
     void setX(float length, float angle);
     void setY(float length, float angle);

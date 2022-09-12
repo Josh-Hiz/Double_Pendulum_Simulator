@@ -3,6 +3,7 @@
 #include "raylib.h"
 #include "includes/pendulum.h"
 #include "includes/GenerateFile.h"
+#include <cmath>
 
 void testPendulum();
 
@@ -12,7 +13,8 @@ pendulum pen1;
 pendulum pen2;
 
 //The universal constant for gravity, for these purposes however, it can be any value as long as it works
-const float g = 1;
+const float g = 9.8;
+const float dt = (1/10.0);
 
 int main() {
 
@@ -35,9 +37,7 @@ int main() {
 
     //Init angular acceleration and angular velocity for pendulums
 
-    float angularA1 = 0.01;
     float angularV1 = 0;
-    float angularA2 = -0.001;
     float angularV2 = 0;
 
     //Pendulum 1 settings
@@ -102,16 +102,33 @@ int main() {
 
     //Main while loop
     while (!WindowShouldClose()) {
-
         Vector2 rod1{px1,py1};
         Vector2 rod2 {px2, py2};
 
-        //The physics equation application that makes this work:
+        //Implement angular acceleration for first pendulum equations:
+        float num1 = -g * (2 * pen1.getMass() + pen2.getMass()) * sin(pen1.getAngle());
+        float num2 = -pen2.getMass() * g * sin(pen1.getAngle() - 2 * pen2.getAngle());
+        float num3 = -2 * sin(pen1.getAngle() - pen2.getAngle()) * pen2.getMass();
+        float num4 = pow(angularV2, 2) * pen2.getLength() + pow(angularV1,2) * pen1.getLength() * cos(pen1.getAngle() - pen2.getAngle());
+        float den1 = pen1.getLength() * (2*pen1.getMass() + pen2.getMass() - pen2.getMass() * cos(2*pen1.getAngle() - 2 * pen2.getAngle()));
+
+        float angularA1 = ((num1 + num2 + num3*num4) / den1) * dt;
+
+        //Angular acceleration for second pendulum:
+         num1 = 2 * sin(pen1.getAngle() - pen2.getAngle());
+         num2 = (pow(angularV1,2.0) * pen1.getLength() * (pen1.getMass() + pen2.getMass()));
+         num3 = g * (pen1.getMass() + pen2.getMass()) * cos(pen1.getAngle());
+         num4 = pow(angularV2,2.0) * pen2.getLength() * pen2.getMass() * cos(pen1.getAngle() - pen2.getAngle());
+         den1 = pen2.getLength() * (2*pen1.getMass() + pen2.getMass() - pen2.getMass() * cos(2*pen1.getAngle() - 2*pen2.getAngle()));
+
+        float angularA2 = ((num1 * (num2 + num3 + num4)) / den1) * dt;
+
+
 
         /**------------------Update------------------*/
 
             frameCounter++;
-            uAngle1 += angularV1;
+            uAngle1 += (RAD2DEG * (angularV1 * dt));
             angularV1 += angularA1;
             pen1.setAngle(uAngle1); //Can only set this once and cant anywhere else, why?
             pen1.setX(pen1.pLength,pen1.getAngle());
@@ -120,7 +137,7 @@ int main() {
             px1 = pen1.getX() + origin.x;
             py1 = pen1.getY() + origin.y;
 
-            uAngle2 += angularV2;
+            uAngle2 += (RAD2DEG * (angularV2 * dt));
             angularV2 += angularA2;
             pen2.setAngle(uAngle2); //Can only set this once and cant anywhere else, why?
             pen2.setX( pen2.pLength,pen2.getAngle());

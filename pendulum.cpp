@@ -32,14 +32,6 @@ void pendulum::setMass(float mass) {
     pMass = mass;
 }
 
-void pendulum::setAngularA(float angA) {
-    angularA = angA;
-}
-
-void pendulum::setAngularV(float angV) {
-    angularV = angV;
-}
-
 float pendulum::getAngle() const {
     return pAngle;
 }
@@ -54,6 +46,10 @@ void pendulum::setAngle(float angle) {
 
 float pendulum::getMass() const {
     return pMass;
+}
+
+float pendulum::getLength() const {
+    return pLength;
 }
 
 //Default constructor
