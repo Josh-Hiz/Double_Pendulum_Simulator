@@ -96,7 +96,7 @@ int main() {
     } else {
         std::cout << "File opened successfully" << std::endl;
     }
-    generator.file << "Angle 1    | X_1         | Y_1         | Angle 2    | X_2         | Y_2         | Frame # " << std::endl;
+    generator.file << "Angle 1    | X_1         | Y_1          | Angle 2     | X_2         | Y_2         | Frame # " << std::endl;
 
 
 
@@ -126,10 +126,10 @@ int main() {
 
 
         /**------------------Update------------------*/
-
+        //TODO: Note: Usually units should be kept sane, meters, seconds, and radians, do not convert radians to degree
             frameCounter++;
-            uAngle1 += (RAD2DEG * (angularV1 * dt));
             angularV1 += angularA1;
+            uAngle1 += (RAD2DEG * (angularV1 * dt));
             pen1.setAngle(uAngle1); //Can only set this once and cant anywhere else, why?
             pen1.setX(pen1.pLength,pen1.getAngle());
             pen1.setY(pen1.pLength, pen1.getAngle());
@@ -137,8 +137,8 @@ int main() {
             px1 = pen1.getX() + origin.x;
             py1 = pen1.getY() + origin.y;
 
-            uAngle2 += (RAD2DEG * (angularV2 * dt));
             angularV2 += angularA2;
+            uAngle2 += (RAD2DEG * (angularV2 * dt));
             pen2.setAngle(uAngle2); //Can only set this once and cant anywhere else, why?
             pen2.setX( pen2.pLength,pen2.getAngle());
             pen2.setY( pen2.pLength,pen2.getAngle());
@@ -157,7 +157,7 @@ int main() {
 
 
             BeginTextureMode(target);
-            DrawCircleV(rod2, 2.0f, RED);
+            DrawCircleV(rod2, 1.5f, RED);
 //            DrawPixelV(rod2, RED);
             EndTextureMode();
 

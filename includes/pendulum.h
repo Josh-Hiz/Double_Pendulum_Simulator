@@ -25,9 +25,7 @@ public:
     float pAngle{};
 
 public:
-
-    void setAngularV(float angV);
-    void setAngularA(float angA);
+    
 
     [[nodiscard]] float getX() const ;
     [[nodiscard]] float getY() const ;
