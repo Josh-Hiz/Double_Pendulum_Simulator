@@ -21,8 +21,8 @@
 			"CMakeLists.txt",
 			"cmake-build-debug/_deps/raylib-src/src/CMakeLists.txt",
 			"cmake-build-debug/_deps/raylib-src/src/external/glfw/src/CMakeLists.txt",
-			"/opt/homebrew/lib/cmake/boost_filesystem-1.79.0/boost_filesystem-config.cmake",
-			"/opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake",
+			"/opt/homebrew/lib/cmake/boost_filesystem-1.80.0/boost_filesystem-config.cmake",
+			"/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake",
 			"/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindBoost.cmake"
 		],
 		"nodes" : 

@@ -1,14 +1,14 @@
 # ninja log v5
-4	379	1662683219958162007	CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator/FileGenerator.cpp.o	6899d321fb912151
-268	1012	1663077136181693282	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o	507a0fd64b535c46
-338	598	1663077135769119069	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o	d3dfeac129cc5006
 497	682	1663077135853654216	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o	4c9ef5e96250c5e4
 8	599	1663077135770966232	CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator/GenerateFile.cpp.o	63e747f0ade48780
+338	598	1663077135769119069	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/input.c.o	d3dfeac129cc5006
+268	1012	1663077136181693282	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/raudio.c.o	507a0fd64b535c46
+4	379	1662683219958162007	CMakeFiles/Double_Pendulum_Sim.dir/FileGenerator/FileGenerator.cpp.o	6899d321fb912151
 8	423	1663077135596468946	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rcore.c.o	27ba42e9706099b8
 8	410	1663077135583118428	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtextures.c.o	84ab577418af8646
-1264	1523	1663077136697977860	Double_Pendulum_Sim	a611cfff30349090
+6	171	1663771676405747734	Double_Pendulum_Sim	a611cfff30349090
 423	626	1663077135798162061	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/init.c.o	479c8da2c6e68e07
-7	563	1663077135735847667	CMakeFiles/Double_Pendulum_Sim.dir/main.cpp.o	b9711744a1732c8b
+8	526	1663209394173125542	CMakeFiles/Double_Pendulum_Sim.dir/main.cpp.o	b9711744a1732c8b
 871	1065	1663077136237633937	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o	ba5fa89e5ae4716c
 626	1042	1663077136212861020	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o	fa4c74d569d8e395
 5	372	1661914562283119527	CMakeFiles/Double_Pendulum_Sim.dir/Pendulum.cpp.o	f800b2f3e23db40b
@@ -31,3 +31,4 @@
 1229	1264	1663077136439748000	_deps/raylib-build/raylib/libraylib.a	90a15151d7291d39
 9	303	1663077135476912942	_deps/raylib-build/raylib/CMakeFiles/raylib.dir/rtext.c.o	fe2f6ad665a6daca
 410	608	1663077135779811009	_deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/context.c.o	3d7279a913fb4f0e
+6	137	1666145242349060117	Double_Pendulum_Sim	a611cfff30349090

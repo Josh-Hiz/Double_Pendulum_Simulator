@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/Boost-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/Boost-1.80.0"
 		},
 		{
 			"name" : "Boost_FILESYSTEM_LIBRARY_RELEASE",
@@ -1767,7 +1767,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake][cfound components: system filesystem ][v1.79.0(1.79.0)]"
+			"value" : "[/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake][cfound components: system filesystem ][v1.80.0(1.79.0)]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -2035,7 +2035,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/boost_atomic-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/boost_atomic-1.80.0"
 		},
 		{
 			"name" : "boost_filesystem_DIR",
@@ -2051,7 +2051,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/boost_filesystem-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/boost_filesystem-1.80.0"
 		},
 		{
 			"name" : "boost_headers_DIR",
@@ -2067,7 +2067,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/boost_headers-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/boost_headers-1.80.0"
 		},
 		{
 			"name" : "boost_system_DIR",
@@ -2083,7 +2083,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/boost_system-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/boost_system-1.80.0"
 		},
 		{
 			"name" : "raylib_BINARY_DIR",

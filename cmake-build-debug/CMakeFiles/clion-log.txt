@@ -22,9 +22,10 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 --   PLATFORM=PLATFORM_DESKTOP
 --   GRAPHICS=GRAPHICS_API_OPENGL_33
 -- generating boost libraries
+-- Found Boost: /opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake (found suitable version "1.80.0", minimum required is "1.79.0") found components: system filesystem 
 -- Boost_INCLUDE_DIRS: /opt/homebrew/include
 -- Boost_LIBRARIES: Boost::system;Boost::filesystem
--- Boost_VERSION: 1.79.0
+-- Boost_VERSION: 1.80.0
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/jhiz2704/C++Projects/Double-Pendulum-Sim/cmake-build-debug

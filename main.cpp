@@ -116,7 +116,7 @@ int main() {
 
         //Angular acceleration for second pendulum:
          num1 = 2 * sin(pen1.getAngle() - pen2.getAngle());
-         num2 = (pow(angularV1,2.0) * pen1.getLength() * (pen1.getMass() + pen2.getMass()));
+         num2 = (float) (pow(angularV1,2.0) * pen1.getLength() * (pen1.getMass() + pen2.getMass()));
          num3 = g * (pen1.getMass() + pen2.getMass()) * cos(pen1.getAngle());
          num4 = pow(angularV2,2.0) * pen2.getLength() * pen2.getMass() * cos(pen1.getAngle() - pen2.getAngle());
          den1 = pen2.getLength() * (2*pen1.getMass() + pen2.getMass() - pen2.getMass() * cos(2*pen1.getAngle() - 2*pen2.getAngle()));
@@ -134,8 +134,8 @@ int main() {
             pen1.setX(pen1.pLength,pen1.getAngle());
             pen1.setY(pen1.pLength, pen1.getAngle());
 
-            px1 = pen1.getX() + origin.x;
-            py1 = pen1.getY() + origin.y;
+            px1 = (float) pen1.getX() + origin.x;
+            py1 = (float) pen1.getY() + origin.y;
 
             angularV2 += angularA2;
             uAngle2 += (RAD2DEG * (angularV2 * dt));
@@ -145,8 +145,8 @@ int main() {
             pen2.x = pen1.getX() + pen2.getX();
             pen2.y = pen1.getY() + pen2.getY();
 
-            px2 = pen2.getX() + origin.x;
-            py2 = pen2.getY() + origin.y;
+            px2 = (float) pen2.getX() + origin.x;
+            py2 = (float) pen2.getY() + origin.y;
 
             //Write data to file by first getting the values of the pendulums:
             generator.getData(std::to_string(frameCounter),std::to_string(uAngle1),std::to_string(px1),std::to_string(px2),std::to_string(uAngle2),std::to_string(px2),std::to_string(py2));
